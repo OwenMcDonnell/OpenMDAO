@@ -1,5 +1,5 @@
 build: off
-
+clone_directory: C:\projects\blue
 environment:
   matrix:
     #- APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
