@@ -42,6 +42,7 @@ environment:
     secure: BMuN2XRyyMclCtx+SGQCMNgbtSplR5GnBKRZVvotqd1SO6aNpMyh+Hqv+23+vBMFcN7te93hDiAE5+joj4R+H4sGGyeRb+khsu/sILHZaLQ=
 
 install:
+- - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 - sh:
     if [ "$encrypted_74d70a284b7d_key" ]; then
       openssl aes-256-cbc -K $encrypted_74d70a284b7d_key -iv $encrypted_74d70a284b7d_iv -in travis_deploy_rsa.enc -out /tmp/travis_deploy_rsa -d;
