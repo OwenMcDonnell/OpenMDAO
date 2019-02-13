@@ -115,7 +115,8 @@ install:
 - cmd: cd C:\projects\blue*
 - cmd: pip install -e .[all]
 - cmd: conda list
-- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+- ps: $env:Path -split ";"
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 test_script:
 - sh: testflo . -n 1;
