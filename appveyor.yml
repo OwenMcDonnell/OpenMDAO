@@ -23,13 +23,13 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       PYTHON: 2.7
       # MKL: 2018.0.2  # Math Kernel Library
-      NUMPY: 1.15
+      NUMPY: 1.12
       SCIPY: 1.0.1
 
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       PYTHON: 3.6
       # MKL: 2018.0.2  # Math Kernel Library
-      NUMPY: 1.15
+      NUMPY: 1.12
       SCIPY: 1.0.1
 
   encrypted_74d70a284b7d_key:
@@ -113,7 +113,6 @@ install:
 - cmd: conda update conda
 - cmd: conda install python=%PYTHON% numpy=%NUMPY% scipy=%SCIPY% pip --quiet
 - cmd: cd C:\projects\blue*
-- cmd: pip install --upgrade --force-reinstall numpy
 - cmd: pip install -e .[all]
 - cmd: conda list
 - ps: $env:Path -split ";"
