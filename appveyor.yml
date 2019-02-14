@@ -111,12 +111,13 @@ install:
 - cmd: set PATH=%CONDA%;%CONDA%\Scripts;%PATH%
 - cmd: conda config --set always_yes yes
 - cmd: conda update conda
+- cmd: conda uninstall numpy
 - cmd: conda install python=%PYTHON% numpy=%NUMPY% scipy=%SCIPY% pip --quiet
 - cmd: cd C:\projects\blue*
 - cmd: pip install -e .[all]
 - cmd: conda list
 - ps: $env:Path -split ";"
-- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 test_script:
 - sh: testflo . -n 1;
