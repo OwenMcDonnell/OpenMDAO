@@ -20,13 +20,13 @@ environment:
       #SCIPY: 1.0.1
       # PETSc: 3.9.1
 
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    - APPVEYOR_BUILD_WORKER_IMAGE: Previous Visual Studio 2015
       PYTHON: 2.7
       # MKL: 2018.0.2  # Math Kernel Library
       NUMPY: 1.15
       SCIPY: 1.0.1
 
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    - APPVEYOR_BUILD_WORKER_IMAGE: Previous Visual Studio 2015
       PYTHON: 3.6
       # MKL: 2018.0.2  # Math Kernel Library
       NUMPY: 1.15
@@ -106,10 +106,10 @@ install:
     echo ">>> Installing OpenMDAO";
     pip install .[all];
     conda list;
-- cmd: conda uninstall numpy
+
 - cmd: if %PYTHON% GTR 3 (set CONDA="C:\\Miniconda3%PYTHON:~2%-x64") else (set CONDA="C:\\Miniconda-x64")
 - cmd: set PATH=%CONDA%;%CONDA%\Scripts;%PATH%
-
+- cmd: conda uninstall numpy
 - cmd: conda config --set always_yes yes
 - cmd: conda update conda
 
