@@ -106,10 +106,10 @@ install:
     echo ">>> Installing OpenMDAO";
     pip install .[all];
     conda list;
-
+- cmd: conda uninstall numpy
 - cmd: if %PYTHON% GTR 3 (set CONDA="C:\\Miniconda3%PYTHON:~2%-x64") else (set CONDA="C:\\Miniconda-x64")
 - cmd: set PATH=%CONDA%;%CONDA%\Scripts;%PATH%
-#- cmd: conda uninstall numpy
+
 - cmd: conda config --set always_yes yes
 - cmd: conda update conda
 
