@@ -111,7 +111,7 @@ install:
 - cmd: set PATH=%CONDA%;%CONDA%\Scripts;%PATH%
 
 - cmd: conda config --set always_yes yes
-#- cmd: conda update conda
+- cmd: conda update conda
 
 - cmd: conda install python=%PYTHON% numpy=%numpy% scipy=%SCIPY% pip 
 - cmd: cd C:\projects\blue*
