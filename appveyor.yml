@@ -107,7 +107,7 @@ install:
     pip install .[all];
     conda list;
 
-- cmd: if %PYTHON% GTR 4 (set CONDA="C:\\Miniconda3%PYTHON:~2%-x64") else (set CONDA="C:\\Miniconda-x64")
+- cmd: if %PYTHON% GTR 3 (set CONDA="C:\\Miniconda3%PYTHON:~2%-x64") else (set CONDA="C:\\Miniconda-x64")
 - cmd: set PATH=%CONDA%;%CONDA%\Scripts;%PATH%
 - cmd: conda uninstall numpy
 - cmd: conda config --set always_yes yes
@@ -118,7 +118,7 @@ install:
 - cmd: pip install -e .[all]
 - cmd: conda list
 - ps: $env:Path -split ";"
-#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 test_script:
 - sh: testflo . -n 1;
