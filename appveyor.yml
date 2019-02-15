@@ -110,6 +110,7 @@ install:
 - cmd: if %PYTHON% GTR 3 (set CONDA="C:\\Miniconda3%PYTHON:~2%-x64") else (set CONDA="C:\\Miniconda-x64")
 - cmd: set PATH=%CONDA%;%CONDA%\Scripts;%PATH%
 - cmd: conda create --yes -n PY%PYTHON% python=%PYTHON%
+- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 - cmd: conda config --set always_yes yes
 - cmd: set PATH=C:\miniconda\envs\PY36\Scripts;C:\Anaconda\envs\PY36;%PATH%
 - cmd: activate PY%PYTHON%
