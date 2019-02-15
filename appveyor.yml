@@ -111,7 +111,8 @@ install:
 - cmd: set PATH=%CONDA%;%CONDA%\Scripts;%PATH%
 - cmd: conda create --yes -n PY%PYTHON% python=%PYTHON%
 - cmd: conda config --set always_yes yes
-- cmd: conda activate PY%PYTHON%
+- cmd: set PATH=C:\miniconda\envs\PY36\Scripts;C:\Anaconda\envs\PY36;%PATH%
+- cmd: activate PY%PYTHON%
 - cmd: conda update conda
 
 - cmd: conda install python=%PYTHON% numpy=%numpy% scipy=%SCIPY% pip 
