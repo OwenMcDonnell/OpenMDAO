@@ -103,7 +103,7 @@ install:
     fi
 
     echo ">>> Installing OpenMDAO";
-    pip install .[all];
+    pip install -e .[all];
     conda list;
 
 - cmd: if %PYTHON% GTR 3 (set CONDA="C:\\Miniconda3%PYTHON:~2%-x64") else (set CONDA="C:\\Miniconda-x64")
