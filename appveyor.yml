@@ -44,7 +44,6 @@ clone_folder: /home/appveyor/projects/blue
 install:
 - sh:
     if [ "$encrypted_74d70a284b7d_key" ]; then
-      echo "variable check passed"
       openssl aes-256-cbc -K $encrypted_74d70a284b7d_key -iv $encrypted_74d70a284b7d_iv -in travis_deploy_rsa.enc -out /tmp/travis_deploy_rsa -d;
       eval "$(ssh-agent -s)";
       chmod 600 /tmp/travis_deploy_rsa;
