@@ -2,7 +2,7 @@ build: off
 
 environment:
   matrix:
-    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+    - APPVEYOR_BUILD_WORKER_IMAGE: Previous Ubuntu
       PYTHON: 3.7
       NUMPY: 1.15
       SCIPY: 1.0.1
