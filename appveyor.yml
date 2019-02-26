@@ -40,7 +40,7 @@ environment:
 
   SNOPT_LOCATION:
     secure: BMuN2XRyyMclCtx+SGQCMNgbtSplR5GnBKRZVvotqd1SO6aNpMyh+Hqv+23+vBMFcN7te93hDiAE5+joj4R+H4sGGyeRb+khsu/sILHZaLQ=
-clone_folder: C:\projects\blue
+clone_folder: /home/appveyor/projects/blue
 install:
 - sh:
     if [ "$encrypted_74d70a284b7d_key" ]; then
